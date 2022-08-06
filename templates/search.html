@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+{% block content %}
+<nav>
+    <ul>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/random">Random</a></li>
+        {% if "username" in session %}
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/login">login</a></li>
+        {% endif%}
+        </ul>
+</nav>
+<form method="POST">
+    {{form.hidden_tag()}}
+    
+    {% for field in form 
+        if field.widget.input_type != "hidden" %}
+        <p>
+        {{field.label}}
+        {{field}}
+        {% for error in field.errors %}
+        {{error}}
+        {% endfor %}
+        {% endfor%}
+        </p>
+    <button type="submit">Submit</button>
+
+</form>
+<div>
+    <a href="/logout">logout</a>
+</div>
+{% endblock %}

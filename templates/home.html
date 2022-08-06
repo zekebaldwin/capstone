@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+{% block content %}
+<nav>
+    <ul>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/search">Search</a></li>
+        {% if "username" in session %}
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/login">login</a></li>
+        {% endif%}
+        </ul>
+</nav>
+<div>
+    <div>
+        <a href="/favorites/{{drink_1_name}}">{{drink_1_name}}</a>
+        <img src="{{drink_1_img}}" alt="{{drink_1_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_2_name}}">{{drink_2_name}}</a>
+        <img src="{{drink_2_img}}" alt="{{drink_2_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_3_name}}">{{drink_3_name}}</a>
+        <img src="{{drink_3_img}}" alt="{{drink_3_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_4_name}}">{{drink_4_name}}</a>
+        <img src="{{drink_4_img}}" alt="{{drink_4_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_5_name}}">{{drink_5_name}}</a>
+        <img src="{{drink_5_img}}" alt="{{drink_5_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_6_name}}">{{drink_6_name}}</a>
+        <img src="{{drink_6_img}}" alt="{{drink_6_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_7_name}}">{{drink_7_name}}</a>
+        <img src="{{drink_7_img}}" alt="{{drink_7_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_8_name}}">{{drink_8_name}}</a>
+        <img src="{{drink_8_img}}" alt="{{drink_8_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_9_name}}">{{drink_9_name}}</a>
+        <img src="{{drink_9_img}}" alt="{{drink_9_name}}">
+    </div>
+    <div>
+        <a href="/favorites/{{drink_10_name}}">{{drink_10_name}}</a>
+        <img src="{{drink_10_img}}" alt="{{drink_10_name}}">
+    </div>
+</div>
+{% endblock %}

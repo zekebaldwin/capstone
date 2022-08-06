@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% block content %}
+<nav>
+    <ul>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/random">Search</a></li>
+        {% if "username" in session %}
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/login">login</a></li>
+        {% endif%}
+        </ul>
+</nav>
+<div>
+    <p>
+        {{name}}
+    </p>
+    <p>
+        {{instructions}}
+    </p>
+    <p>
+        <img src="{{image}}" alt="image">
+    </p>
+    <div>
+        <ul>
+        {% for k, v in ingrediants.items() %}
+            <li>{{v}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+<div>
+    <form action="/favorites", method="post">
+         <button type="submit", value="{{drink_name}}", name="drink">
+                Favorite
+        </button>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% block content %}
+<p>
+    {{instructions}}
+    {{drink_id}}
+    {{drink_name}}
+</p>
+<p>
+    <img src="{{image}}">
+</p>
+<div>
+    <form action="/favorites", method="post">
+         <button type="submit", value="{{drink_name}}", name="drink">
+                Add To Favorites!
+        </button>
+    </form>
+</div>
+
+
+{% endblock %}
